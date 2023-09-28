@@ -16,7 +16,7 @@ function App() {
 
     const newItem = { description, quantity, packed: false, id: Date.now() };
 
-    setList([...list, newItem]);
+    setList((l) => [...l, newItem]);
 
     setDescription('');
     setQuantity(1);
