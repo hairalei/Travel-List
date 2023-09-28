@@ -5,7 +5,7 @@ function Stats({ list }) {
     <footer className='stats'>
       <em>
         You have {list.length} items on your list, and you already packed{' '}
-        {packed} ({Math.round((packed / list.length) * 100)}%)
+        {packed} ({Math.round((packed / list.length) * 100) || 0}%)
       </em>
     </footer>
   );
