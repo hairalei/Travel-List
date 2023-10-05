@@ -31,6 +31,10 @@ function App() {
     setList([...newItem]);
   }
 
+  function handleDelete(id) {
+    setList((l) => l.filter((item) => item.id !== id));
+  }
+
   return (
     <div className='app'>
       <Logo />
@@ -41,7 +45,11 @@ function App() {
         setDescription={setDescription}
         setQuantity={setQuantity}
       />
-      <PackingList list={list} handlePacked={handlePacked} />
+      <PackingList
+        list={list}
+        handlePacked={handlePacked}
+        handleDelete={handleDelete}
+      />
       <Stats list={list} />
     </div>
   );
