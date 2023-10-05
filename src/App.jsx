@@ -35,6 +35,14 @@ function App() {
     setList((l) => l.filter((item) => item.id !== id));
   }
 
+  function handleClearList() {
+    if (list.length == 0) return;
+
+    const confirm = window.confirm('Delete all items?');
+
+    if (confirm) setList([]);
+  }
+
   return (
     <div className='app'>
       <Logo />
@@ -49,6 +57,7 @@ function App() {
         list={list}
         handlePacked={handlePacked}
         handleDelete={handleDelete}
+        handleClearList={handleClearList}
       />
       <Stats list={list} />
     </div>
